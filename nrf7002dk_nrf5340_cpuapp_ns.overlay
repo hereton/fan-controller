@@ -1,0 +1,51 @@
+// To get started, press Ctrl+Space (or Option+Esc) to bring up the completion menu and view the available nodes.
+
+// You can also use the buttons in the sidebar to perform actions on nodes.
+// Actions currently available include:
+
+// * Enabling / disabling the node
+// * Adding the bus to a bus
+// * Removing the node
+// * Connecting ADC channels
+
+// For more help, browse the DeviceTree documentation at https: //docs.zephyrproject.org/latest/guides/dts/index.html
+// You can also visit the nRF DeviceTree extension documentation at https: //nrfconnect.github.io/vscode-nrf-connect/devicetree/nrfdevicetree.html
+
+/ {
+
+  fan_controller {
+    compatible = "gpio-leds";
+    fan1level1: fan_1_level_1 {
+      gpios = <&gpio1 0 GPIO_ACTIVE_HIGH>;
+      label = "fan 1 level 1";
+    };
+    fan1level2: fan_1_level_2 {
+      gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+      label = "fan 1 level 2";
+    };
+    fan1level3: fan_1_level_3 {
+      gpios = <&gpio1 4 GPIO_ACTIVE_HIGH>;
+      label = "fan 1 level 3";
+    };
+    fan2level1: fan_2_level_1 {
+      gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+      label = "fan 2 level 1";
+    };
+    fan2level2: fan_2_level_2 {
+      gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+      label = "fan 2 level 2";
+    };
+    fan2level3: fan_2_level_3 {
+      gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+      label = "fan 2 level 3";
+    };
+  };
+  aliases {
+    fan-1-level-1 = &fan1level1;
+    fan-1-level-2 = &fan1level2;
+    fan-1-level-3 = &fan1level3;
+    fan-2-level-1 = &fan2level1;
+    fan-2-level-2 = &fan2level2;
+    fan-2-level-3 = &fan2level3;
+  };
+};
